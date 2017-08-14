@@ -1,12 +1,12 @@
-// import {  } from './actions.js';
+import { TOGGLE_MODAL_DISPLAY } from './actions.js';
 
-const ACTION_NAME = 'ACTION_NAME';
 
 export default (state, action) => {
   switch (action.type) {
-    case ACTION_NAME:
+    case TOGGLE_MODAL_DISPLAY:
       return Object.assign({}, state, {
-        //new state
+        modalDisplay: !state.modalDisplay
+        // modalDisplay: action.modalDisplay
       });
     default:
       return state;
