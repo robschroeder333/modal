@@ -17,7 +17,9 @@ export default (state, action) => {
       });
 
     case UPDATE_DATA:
+    console.log('inside of the reducer--', action.name, action.data)
       return Object.assign({}, state, {
+        currentModal: '',
         canDisplayModal: true,
         [action.name]: action.data
       });

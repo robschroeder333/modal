@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { closeModal, updateData } from '../../../redux/actions.js';
 
 
-export class name extends React.Component {
+export class favorites extends React.Component {
 
   constructor(props){
     super(props)
@@ -12,21 +12,17 @@ export class name extends React.Component {
 
   onSubmit (e) {
     e.preventDefault();
-    let fName = e.target.firstname.value;
-    let lName = e.target.lastname.value;
     // console.log(props)
-    this.props.updateData('name', `${lName}, ${fName}`);
+    this.props.updateData('favorites', /*data*/);
   }
 
   render () {
-    if (this.props.currentModal === 'name') {
+    if (this.props.currentModal === 'address') {
       return (
         <div className="modal">
           <form onSubmit={this.onSubmit}>
-            <label name="firstname">First name:</label>
-            <input type="text" name="firstname" />
-            <label name="lastname">Last name:</label>
-            <input type="text" name="lastname" />
+            <label name="favorites">Favorites:</label>
+
             <input type="submit" value="submit" />
           </form>
         </div>
@@ -53,4 +49,4 @@ const mapDispatchToProps = dispatch => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(name);
+)(favorites);
