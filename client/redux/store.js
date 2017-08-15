@@ -9,7 +9,8 @@ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(
   Reducer,
   {
-    modalDisplay: true,
+    currentModal: '',
+    canDisplayModal: true,
     name: '',
     address: '',
     favorites: []

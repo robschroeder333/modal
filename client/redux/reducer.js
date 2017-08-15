@@ -1,13 +1,27 @@
-import { TOGGLE_MODAL_DISPLAY } from './actions.js';
+import { TOGGLE_MODAL_DISPLAY, OPEN_MODAL, CLOSE_MODAL, UPDATE_DATA } from './actions.js';
 
 
 export default (state, action) => {
   switch (action.type) {
-    case TOGGLE_MODAL_DISPLAY:
+
+    case OPEN_MODAL:
       return Object.assign({}, state, {
-        modalDisplay: !state.modalDisplay
-        // modalDisplay: action.modalDisplay
+        currentModal: action.name,
+        canDisplayModal: false
       });
+
+    case CLOSE_MODAL:
+      return Object.assign({}, state, {
+        currentModel: '',
+        canDisplayModal: true
+      });
+
+    case UPDATE_DATA:
+      return Object.assign({}, state, {
+        canDisplayModal: true,
+        [action.name]: action.data
+      });
+
     default:
       return state;
   }
