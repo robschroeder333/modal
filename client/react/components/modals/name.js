@@ -14,8 +14,7 @@ export class name extends React.Component {
     e.preventDefault();
     let fName = e.target.firstname.value;
     let lName = e.target.lastname.value;
-    // console.log(props)
-    this.props.updateData('name', `${lName}, ${fName}`);
+    this.props.updateData('name', `${fName} ${lName}`);
   }
 
   render () {

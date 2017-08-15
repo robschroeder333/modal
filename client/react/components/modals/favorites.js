@@ -12,21 +12,57 @@ export class favorites extends React.Component {
 
   onSubmit (e) {
     e.preventDefault();
-    // console.log(props)
-    this.props.updateData('favorites', /*data*/);
+    let favoritesData = Array.from(e.target.elements)
+      .filter((ele) => ele.type === 'text');
+
+    let data = favoritesData.map(ele => ele.value);
+
+    console.log(data)
+    this.props.updateData('favorites', data);
   }
 
   render () {
-    if (this.props.currentModal === 'address') {
-      return (
-        <div className="modal">
-          <form onSubmit={this.onSubmit}>
+    if (this.props.currentModal === 'favorites') {
+      if (this.props.favorites.length < 1){
+        return (
+          <div className="modal">
+            <form name="favorites" onSubmit={this.onSubmit}>
+              <label name="favorites">Favorites:</label>
+              <ol>
+                <li>
+                  <input type="text" key="0" />
+                </li>
+                <li>
+                  <input type="text" key="1" />
+                </li>
+                <li>
+                  <input type="text" key="2" />
+                </li>
+              </ol>
+              <input type="submit" value="submit" />
+            </form>
+          </div>
+      );
+      } else {
+        return (
+          <div className="modal">
+          <form name="favorites" onSubmit={this.onSubmit}>
             <label name="favorites">Favorites:</label>
-
+            <ol>
+            {
+              this.props.favorites.map((ele, i) => (
+                <li>
+                  <input type="text" key={`m${i}`} defaultValue={ele}/>
+                </li>
+              ))
+            }
+            </ol>
             <input type="submit" value="submit" />
           </form>
         </div>
-      );
+
+        );
+      }
     } else {
       return (
         <div></div>

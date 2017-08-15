@@ -4,6 +4,7 @@ import { openModal } from '../../redux/actions.js';
 
 import ModName from './modals/name.js';
 import ModAddress from './modals/address.js';
+import ModFavorites from './modals/favorites.js';
 
 
 export const home = (props) => (
@@ -22,9 +23,10 @@ export const home = (props) => (
 
     <h1>Favorite Teams</h1>
     <ol>
-      {props.favorites.map((ele, i) => (<li>{ele}</li>))}
+      {props.favorites.map((ele, i) => (<li key={i} >{ele}</li>))}
     </ol>
     <button onClick={() => (props.openModal('favorites'))}>Edit</button>
+    <ModFavorites currentModal={props.currentModal} props={props} />
   </div>
 );
 
