@@ -23,9 +23,11 @@ export class address extends React.Component {
           <div className="modal">
             <form onSubmit={this.onSubmit}>
               <label name="address">Address:</label>
-              <textarea rows="5" cols="40" name="address" defaultValue={this.props.address}/>
+              <br />
+              <textarea rows="5" cols="30" name="address" defaultValue={this.props.address}/>
+              <br />
               <button onClick={() => this.props.closeModal('address')}>Cancel</button>
-              <input type="submit" value="submit" />
+              <button type="submit">Save</button>
             </form>
           </div>
           <div className="background" onClick={() => this.props.closeModal('address')}></div>

@@ -12,9 +12,7 @@ export class name extends React.Component {
 
   onSubmit (e) {
     e.preventDefault();
-    let fName = e.target.firstname.value;
-    let lName = e.target.lastname.value;
-    this.props.updateData('name', `${fName} ${lName}`);
+    this.props.updateData('name', e.target.fullName.value);
   }
 
   render () {
@@ -23,12 +21,11 @@ export class name extends React.Component {
         <div>
           <div className="modal">
             <form onSubmit={this.onSubmit}>
-              <label name="firstname">First name:</label>
-              <input type="text" name="firstname" />
-              <label name="lastname">Last name:</label>
-              <input type="text" name="lastname" />
+              <label name="fullName">Name:</label>
+              <input type="text" name="fullName" defaultValue={this.props.name}/>
+              <br />
               <button onClick={() => this.props.closeModal('name')}>Cancel</button>
-              <input type="submit" value="submit" />
+              <button type="submit">Save</button>
             </form>
           </div>
           <div className="background" onClick={() => this.props.closeModal('name')}></div>

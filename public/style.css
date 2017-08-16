@@ -1,6 +1,28 @@
+* {
+  font-family: 'Open Sans', sans-serif;
+  color: #616161;
+}
+
+h1 {
+  font-weight: 400;
+}
+
+h2 {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+h5 {
+  font-weight: 400;
+  color: #0277BD;
+}
+
+h5:hover {
+  cursor: pointer;
+}
 
 .modal {
-    width: 300px;
+    width: 400px;
     height: 300px;
     position: absolute;
     top: 50%;
@@ -10,6 +32,12 @@
     z-index: 9999;
     background: white;
   }
+
+form {
+  position: relative;
+  top: 25%;
+  left: 25%;
+}
 
 .background {
     position: absolute;
@@ -21,9 +49,8 @@
     background: rgba(0, 0, 0, 0.3);
   }
 
-/* BUG: will not update button  */
-.button {
-    background-color: #2f73e0;
+button {
+    background-color: #0277BD;
     border: none;
     color: white;
     padding: 12px 30px;
@@ -34,3 +61,4 @@
     margin: 4px 2px;
     cursor: pointer;
 }
+

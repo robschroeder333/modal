@@ -59,7 +59,7 @@ export class favorites extends React.Component {
                 </ol>
                 <h5 onClick={this.addFavorite}>+Add</h5>
                 <button onClick={() => this.props.closeModal('favorites')}>Cancel</button>
-                <input type="submit" value="submit" />
+                <button type="submit">Save</button>
               </form>
             </div>
             <div className="background" onClick={() => this.props.closeModal('favorites')}></div>
@@ -67,7 +67,7 @@ export class favorites extends React.Component {
       );
       } else {
         //BUG: keys are not unique error
-        //BUG: when new input is added, number does not appear
+        //BUG: when new input is added, number does not appear (and positions vary)
         return (
           <div>
             <div className="modal">
@@ -82,9 +82,9 @@ export class favorites extends React.Component {
                   ))
                 }
                 </ol>
-                <h5 onClick={this.addFavorite}>+Add</h5>
+                <h5 onClick={this.addFavorite}>+ Add</h5>
                 <button onClick={() => this.props.closeModal('favorites')}>Cancel</button>
-                <input type="submit" value="submit" />
+                <button type="submit">Save</button>
               </form>
             </div>
             <div className="background" onClick={() => this.props.closeModal('favorites')}></div>
