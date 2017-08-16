@@ -6,7 +6,7 @@ import ModName from './modals/name.js';
 import ModAddress from './modals/address.js';
 import ModFavorites from './modals/favorites.js';
 
-
+//hold each modal and corresponding button to "open" modal
 export const home = (props) => (
   <div>
     <h1>Name</h1>
@@ -30,6 +30,7 @@ export const home = (props) => (
   </div>
 );
 
+//connect to redux store to display data entered into modal
 const mapStateToProps = state => {
   return state;
 }

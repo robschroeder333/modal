@@ -21,6 +21,7 @@
     background: rgba(0, 0, 0, 0.3);
   }
 
+/* BUG: will not update button  */
 .button {
     background-color: #2f73e0;
     border: none;

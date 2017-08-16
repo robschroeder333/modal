@@ -32,6 +32,13 @@ export class favorites extends React.Component {
   }
 
   render () {
+
+    /*
+      -render three input fields if no data exists (in the store)
+      -otherwise iterate through array (from store) and create an
+      input for each element, setting default value to that element
+    */
+
     if (this.props.currentModal === 'favorites') {
       if (this.props.favorites.length < 1){
         return (
@@ -50,7 +57,7 @@ export class favorites extends React.Component {
                     <input type="text" key="2" />
                   </li>
                 </ol>
-                <h3 onClick={this.addFavorite} >Add Favorite</h3>
+                <h5 onClick={this.addFavorite}>+Add</h5>
                 <button onClick={() => this.props.closeModal('favorites')}>Cancel</button>
                 <input type="submit" value="submit" />
               </form>
@@ -59,6 +66,8 @@ export class favorites extends React.Component {
           </div>
       );
       } else {
+        //BUG: keys are not unique error
+        //BUG: when new input is added, number does not appear
         return (
           <div>
             <div className="modal">
@@ -73,7 +82,7 @@ export class favorites extends React.Component {
                   ))
                 }
                 </ol>
-                <h5 onClick={this.addFavorite}>+ Add Favorite</h5>
+                <h5 onClick={this.addFavorite}>+Add</h5>
                 <button onClick={() => this.props.closeModal('favorites')}>Cancel</button>
                 <input type="submit" value="submit" />
               </form>

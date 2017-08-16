@@ -16,6 +16,7 @@ export class address extends React.Component {
   }
 
   render () {
+
     if (this.props.currentModal === 'address') {
       return (
         <div>
