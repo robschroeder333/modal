@@ -20,14 +20,18 @@ export class name extends React.Component {
   render () {
     if (this.props.currentModal === 'name') {
       return (
-        <div className="modal">
-          <form onSubmit={this.onSubmit}>
-            <label name="firstname">First name:</label>
-            <input type="text" name="firstname" />
-            <label name="lastname">Last name:</label>
-            <input type="text" name="lastname" />
-            <input type="submit" value="submit" />
-          </form>
+        <div>
+          <div className="modal">
+            <form onSubmit={this.onSubmit}>
+              <label name="firstname">First name:</label>
+              <input type="text" name="firstname" />
+              <label name="lastname">Last name:</label>
+              <input type="text" name="lastname" />
+              <button onClick={() => this.props.closeModal('name')}>Cancel</button>
+              <input type="submit" value="submit" />
+            </form>
+          </div>
+          <div className="background" onClick={() => this.props.closeModal('name')}></div>
         </div>
       );
     } else {

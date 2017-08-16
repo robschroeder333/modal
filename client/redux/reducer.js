@@ -2,6 +2,7 @@ import { TOGGLE_MODAL_DISPLAY, OPEN_MODAL, CLOSE_MODAL, UPDATE_DATA } from './ac
 
 
 export default (state, action) => {
+  console.log(action.type)
   switch (action.type) {
 
     case OPEN_MODAL:
@@ -12,7 +13,7 @@ export default (state, action) => {
 
     case CLOSE_MODAL:
       return Object.assign({}, state, {
-        currentModel: '',
+        currentModal: '',
         canDisplayModal: true
       });
 

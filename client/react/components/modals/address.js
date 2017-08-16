@@ -12,19 +12,22 @@ export class address extends React.Component {
 
   onSubmit (e) {
     e.preventDefault();
-    // console.log(props)
     this.props.updateData('address', e.target.address.value);
   }
 
   render () {
     if (this.props.currentModal === 'address') {
       return (
-        <div className="modal">
-          <form onSubmit={this.onSubmit}>
-            <label name="address">Address:</label>
-            <textarea rows="5" cols="60" name="address" />
-            <input type="submit" value="submit" />
-          </form>
+        <div>
+          <div className="modal">
+            <form onSubmit={this.onSubmit}>
+              <label name="address">Address:</label>
+              <textarea rows="5" cols="40" name="address" defaultValue={this.props.address}/>
+              <button onClick={() => this.props.closeModal('address')}>Cancel</button>
+              <input type="submit" value="submit" />
+            </form>
+          </div>
+          <div className="background" onClick={() => this.props.closeModal('address')}></div>
         </div>
       );
     } else {

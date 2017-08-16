@@ -13,13 +13,13 @@ export const home = (props) => (
     <h5>{props.name}</h5>
     <button onClick={() => (props.openModal('name'))}>Edit</button>
     <ModName currentModal={props.currentModal} props={props}/>
-    <br />
+    <hr />
 
     <h1>Address</h1>
     <h5>{props.address}</h5>
     <button onClick={() => (props.openModal('address'))}>Edit</button>
     <ModAddress currentModal={props.currentModal} props={props} />
-    <br />
+    <hr />
 
     <h1>Favorite Teams</h1>
     <ol>
